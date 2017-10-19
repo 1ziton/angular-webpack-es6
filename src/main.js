@@ -4,10 +4,11 @@
  */
 import './styles/index.less';
 import angular from 'angular';
-import ngRoute from 'angular-route';
+// import ngRoute from 'angular-route';
+import uiRouter from 'angular-ui-router';
 import route from './_route.js';
 
-angular.module('ng-app', ['ngRoute'])
+angular.module('ng-app', ['ui.router'])
     .config(route)
     .run(['$window', '$rootScope', '$location',($window, $rootScope) => {
         $window.angular=angular;

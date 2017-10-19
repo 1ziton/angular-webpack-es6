@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "angular": "1.2.30",
-    "angular-route": "1.2.30",
     "angular-sanitize": "1.5.8",
+    "angular-ui-router": "^0.3.2",
     "classnames": "^2.2.5",
     "jquery": "^2.1.4",
     "lao-utils": "^0.1.7",
