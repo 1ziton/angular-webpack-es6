@@ -1,0 +1,173 @@
+
+@mixin btn {
+    width: 65px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: none;
+    vertical-align: top;
+    display: inline-block;
+    cursor: pointer;
+}
+
+@mixin icon-btn(){
+    background-size: 122px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    vertical-align: sub;
+}
+/**
+*  <button class="btn-default">清空</button>
+ */
+ .btn-default {
+    @include btn;
+    color: #5B81D1;
+    border: $border-slim;
+    border-radius: 3px;
+    background-color: #f7f7f7;
+    vertical-align: top;
+    margin-left: 15px;
+    &:hover {
+        background: $color-white;
+    }
+}
+/**
+    <button class="btn-primary">查询</button>
+ */
+.btn-primary {
+    @include btn;
+    background-color: $search-button-color;
+    border-radius: 3px;
+    color: $color-font-white;
+    cursor:pointer;
+    &:hover {
+        background: $color-button-hover;
+    }
+}
+
+button[disabled]{
+    cursor: not-allowed;
+    background-color: #7a94c7;
+    &:hover {
+        background-color: #7a94c7;
+    }
+}
+
+/**
+    异常反馈按钮
+    <div class="abnormal-feedback">
+        <span class="circle">+</span>
+        异常反馈
+    </div>
+ */
+.abnormal-feedback {
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    color: $color-font-white;
+    background-color: $color-blue;
+    .circle {
+        display: inline-block;
+        margin-right: 4px;
+        line-height: 10px;
+        text-align: center;
+        font-weight: bolder;
+        font-size: $font-size-16;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        color: $color-font-white;
+        border: 2px solid white;
+    }
+}
+
+
+/**
+* 右侧滑出弹窗关闭按钮
+*/
+.slide-modal-close-btn{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 12px;
+    height: 78px;
+    margin-top: -39px;
+    background: url("/assets/icon/close-modal.png");
+    border: none;
+    outline: none;
+}
+.excel {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    width: 75px;
+    height: 30px;
+    box-sizing: border-box;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    line-height:30px;
+    display: inline-block;
+    background-color: #0d85e4;
+    color: #fff;
+}
+
+
+
+@mixin pass-btn($color) {
+    background: $color;
+    width: 100px;
+    height: 50px;
+    color: #fff;
+    border-radius: 7px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+
+
+.pass-btn {
+    @include pass-btn($color-blue)
+}
+.pass-failed {
+    @include pass-btn(yellowgreen)
+}
+.pass-quite {
+    @include pass-btn($color-secondary)
+}
+
+/**
+*数据筛选按钮
+**/
+.data-filter-btn {
+    float: left;
+    button {
+        min-width: 105px;
+        padding: 5px;
+        border:1px solid $tab-button-background;
+        color: $tab-button-background;
+        background-color: $color-white;
+        outline: none;
+        margin: 20px 10px 15px 0;
+
+        &:hover, &.active {
+            color: $color-white;
+            background: $tab-button-background;
+        }
+    }
+}
+
+/**
+*全系统的操作按钮
+*
+**/
+//新增按钮
+// .add-btn{
+//     @include icon-btn();
+//     background: url("/assets/images/selected/xinzeng.png") no-repeat;
+// }

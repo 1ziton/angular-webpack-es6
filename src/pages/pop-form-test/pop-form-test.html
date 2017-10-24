@@ -1,0 +1,20 @@
+<div class="modal-demo">
+    <script type="text/ng-template" id="stackedModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title-">The  modal!</h3>
+        </div>
+        <div class="modal-body" id="modal-body-">
+            Having multiple modals open at once is probably bad UX but it's technically possible.
+        </div>
+    </script>
+
+    <button type="button" class="btn btn-default" ng-click="ctrl.open()">点击弹窗!</button>
+    <button type="button" class="btn btn-default" ng-click="ctrl.open('lg')">大弹窗</button>
+    <button type="button" class="btn btn-default" ng-click="ctrl.open('sm')">小弹窗</button>
+    <button type="button" class="btn btn-default" ng-click="ctrl.open('sm', '.modal-parent')">
+        在自定义父窗口中打开
+    </button>
+    <div ng-show="ctrl.selected">Selection from a modal: </div>
+    <div class="modal-parent">
+    </div>
+</div>

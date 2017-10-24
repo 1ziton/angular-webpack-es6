@@ -13,8 +13,12 @@ webpackConfig.output = {
 
 webpackConfig.module.loaders = webpackConfig.module.loaders.concat([
     {
-        test: /\.less$/,
-        loader: ExtractTextPlugin.extract("style-loader","css?-url&sourceMap!less?sourceMap")
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract("style-loader","css?-url&sourceMap!sass?sourceMap")
+    },
+    {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract("style-loader","css-loader")
     }
 ]);
 

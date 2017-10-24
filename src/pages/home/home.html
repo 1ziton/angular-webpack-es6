@@ -1,11 +1,29 @@
-<div class="home_page">
-	<ui-icon type="github"></ui-icon><h3 ng-bind="home.message"></h3>
-	<p>A complete, yet simple, starter for Angular1.x using ES6 and build with webpack</p>
-	<ul>
-		<li>ES6, and ES7 support with babel.</li>
-		<li>Source maps included in all builds.</li>
-		<li>Development server with live reload.</li>
-		<li>built width webpack.</li>
-	</ul>
-	<p><a href="https://github.com/giscafer/angular-webpack-es6.git">see more>>></a></p>
+<h2>首页</h2>
+<span>
+	前端使用gulp+webpack+angularjs1.2+es6 搭建，开发模式和传统的js熟悉angularjs1.x不一样，也和现有的ng2+的开发模式不一样。
+	<br> 相关同学周末学习了解一下使用： ES6写angular.js参考文章：
+	<a href="http://blog.csdn.net/qq_28506819/article/details/75971303">angular1.x + ES6开发风格记录</a>
+</span>
+
+<p>
+	<a href="#/member-center">会员中心</a>
+</p>
+<br>
+<p>
+	<a href="#/help-center">帮助中心</a>
+</p>
+<br>
+<p>{{ ctrl.testNumber | digitUpp}}</p>
+<p>{{ ctrl.testDate | dateFormat}}</p>
+<br>
+<p>
+	<a href="#/pop-form-test">弹窗测试demo</a>
+</p>
+<br>
+<button type="button" class="btn btn-default" ng-click="ctrl.test()">请求测试!</button>
+<button type="button" class="btn btn-default" ng-click="ctrl.test1()">提示自定义位置</button>
+<button type="button" class="btn btn-default" ng-click="ctrl.test2()">2s关闭信息</button>
+<br>
+<div>
+	{{ctrl.data}}
 </div>

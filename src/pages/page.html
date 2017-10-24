@@ -1,0 +1,54 @@
+<div class="home-page">
+    <div class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <a class="navbar-brand" href="#">LOGO</a>
+            <ul class="navbar-nav">
+                <li class="nav-item" ng-class="{active: ctrl.curMenu==='home'}">
+                    <a class="nav-link" ui-sref=".home" ng-click="ctrl.selectMenu('home')">首页</a>
+                    <i class="triangle"></i>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">一键下单</a>
+                    <i class="triangle"></i>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">产品服务</a>
+                    <i class="triangle"></i>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">解决方案</a>
+                    <i class="triangle"></i>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">合作共赢</a>
+                    <i class="triangle"></i>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">下载</a>
+                    <i class="triangle"></i>
+                </li>
+                <li class="nav-item" ng-class="{active: ctrl.curMenu==='about'}">
+                    <a class="nav-link" ui-sref=".about" href="#" ng-click="ctrl.selectMenu('about')">关于我们</a>
+                    <i class="triangle"></i>
+                </li>
+
+            </ul>
+            <div class="login-btn">
+                <button class="btn btn-default" ui-sref="home.login">登录</button>
+                <button class="btn btn-primary" ui-sref="register">注册</button>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin:50px">
+        <!-- 首页路由 -->
+        <div ui-view=""></div>
+    </div>
+    <!-- 指令，类似ng2的component -->
+    <yzt-footer></yzt-footer>
+</div>

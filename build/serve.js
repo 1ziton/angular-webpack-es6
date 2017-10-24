@@ -1,7 +1,7 @@
 import gulp     from 'gulp';
 import webpack  from 'webpack';
 import url      from 'url';
-// import proxy    from 'proxy-middleware';
+import proxy    from 'proxy-middleware';
 import serve    from 'browser-sync';
 import config   from './config';
 import webpackDevMiddleware from 'webpack-dev-middleware';
@@ -10,7 +10,7 @@ import webpackHotMiddleware from 'webpack-hot-middleware';
 gulp.task('serve', () => {
     const webpackConfig = require('./webpack.dev.config').default;
 
-    // var proxyOptions = url.parse('http://localhost:8000/');
+    // var proxyOptions = url.parse('http://120.76.247.73:11006/');
 
     // proxyOptions.route = '/';
 
@@ -36,8 +36,8 @@ gulp.task('serve', () => {
             }),
             webpackHotMiddleware(compiler, {
                 log: console.log
-            })/*,
-            proxy(proxyOptions)*/
+            })/* ,
+            proxy(proxyOptions) */
         ]
     });
 });

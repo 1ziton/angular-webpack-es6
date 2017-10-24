@@ -1,0 +1,302 @@
+
+* {
+    font-family: $font-YaHei, $font-black, $font-song, $font-helvetica, $font-Arial, $font-sans-serif;
+    font-size: $font-size-12;
+    /*color: #333;*/
+}
+
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html {
+    overflow-y: scroll;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, l, dt, dd, ul, ol, li, pre, ieldset, lengend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+/*重置所有下拉框-三角形样式*/
+select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    padding-right: 16px;
+    padding-left: 4px;
+    background: url("/assets/icon/trig.jpg") no-repeat 96% 13px;
+}
+.fa{
+    font:normal normal normal 14px/1 FontAwesome!important;
+}
+ul, ol {
+    list-style: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+h1 {
+    font-size: $font-size-18; /* 18px / 12px = 1.5 */
+}
+
+h2 {
+    font-size: $font-size-16;
+}
+
+h3 {
+    font-size: $font-size-14;
+}
+
+h4, h5, h6 {
+    font-size: 100%;
+}
+
+fieldset, img {
+    border: none;
+}
+
+button, input, select, textarea {
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 重置 hr */
+hr {
+    border: none;
+    height: 1px;
+}
+
+
+i {
+    font-style: normal;
+}
+
+#main-con{
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    left: 45px;
+    overflow-y:auto;
+    overflow-x: hidden;
+    width:calc( 100% - 45px );
+    height:calc( 100% - 50px );
+    -webkit-transition: all 180ms ease-in;
+    -ms-transition: all 180ms ease-in;
+    -moz-transition: all 180ms ease-in;
+    -o-transition: all 180ms ease-in;
+    transition: all 180ms ease-in;
+    padding: 0px 0px 20px 5px;
+}
+#main-header{
+    display: inline;
+}
+
+.show-flow-chart {
+    background-color: #EFF2F8;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 0 10px;
+    line-height: 40px;
+    color:#333;
+    padding-right:20px;
+    > .show-flow-list > li {
+        padding:0 15px 0 10px;
+        float:left;
+        cursor:pointer;
+        > span.unselected {
+            color:$color-gray;
+        }
+        &:first-child {
+            i {
+                color: black;
+                font-size: 16px;
+                font-weight: bold;
+            }
+            padding-left: 0;
+        }
+    }
+}
+.icon-green {
+    width:15px;
+    height: 15px;
+    float:left;
+    margin: 3px 5px 0 0;
+    background: url("/assets/icon/finan-icon.png") no-repeat 0px 0px;
+}
+.icon-gray {
+    width:15px;
+    height: 15px;
+    float:left;
+    margin: 3px 7px 0 0;
+    background: url("/assets/icon/finan-icon.png") no-repeat -28px 0px;
+}
+
+textarea{
+    resize: none;
+    padding: 5px;
+}
+/**
+* 必填的红色星号
+*/
+.require-star{
+    color: $color-red;
+}
+/**
+* 单位上标
+*/
+.superscript{
+    font-size: 12px;
+    font-style: normal;
+    vertical-align:super;
+}
+/**
+* 点击图片可进行查看大图时，图片列表样式
+ */
+.img-wrap{
+    display: inline-block;
+    margin-top: 15px;
+    .img-item{
+        float: left;
+        >a>img{
+            width: 90px;
+            height: 65px;
+            margin-right: 10px;
+        }
+    }
+}
+.progress{
+    display: inline-block;
+    width: 143px;
+    height: 36px;
+    line-height: 36px;
+    color: $color-white!important;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 10px;
+}
+
+//growl提示
+#info{
+    display: none;
+    z-index: z-index("info")!important;
+}
+/*遮罩层*/
+.mask-layer{
+    display:none;
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top:0;left:0;
+    background-color: #666666;
+    opacity: 0.5;
+    z-index: z-index("mask");
+}
+
+/*全局统一样式*/
+.header-padding {
+    padding: 20px 0 0 20px;
+}
+.table-padding{
+    padding-right: 10px;
+}
+.ui-datatable th.ui-state-default{
+    background-color: #FAFCFF;
+}
+.ui-state-default{
+    border: 1px solid #EBEEEE;
+}
+.ui-chkbox .ui-chkbox-box{
+    border: 1px solid #EBEEEE;
+}
+.po-relative {
+    position: relative;
+}
+.ui-datatable .ui-datatable-data > tr > td{
+    text-align: center;
+}
+.ui-widget-header .ui-state-default, .ui-widget-content .ui-state-default, .ui-state-default {
+    border: 1px solid #EBEEEE;
+}
+.ui-widget-header{
+    width:100%;
+}
+.control-input{
+    display: inline-block;
+    height: 30px;
+    select,input {
+        border: 1px solid #EBEEEE;
+        padding-left: 10px;
+        width: 150px;
+        height: 30px;
+        vertical-align: middle;
+    }
+}
+.control-label{
+    display: inline-block;
+    width: 75px;
+    text-align: center;
+}
+
+.show-grid [class^="col-"]{
+    background-color: white !important;
+    border: none !important;
+    margin-bottom: 10px;
+    padding-top: 0px!important;
+}
+.line-end-date{
+    display: inline-block;
+    width: 90px;
+}
+
+//tree样式
+.intel-match-area .ui-treenode-content > .fa-caret-down:before {
+    content: '';
+}
+
+.intel-match-area .ui-treenode-content > .fa-caret-right:before {
+    content: '';
+}
+.intel-match-area .ui-tree .fa-caret-right {
+    width: 16px;
+    height: 16px;
+    background: url('/assets/images/common/subadd.png') no-repeat;
+    margin-right: 5px;
+}
+
+.intel-match-area .ui-tree .fa-caret-down {
+    width: 16px;
+    height: 16px;
+    background: url('/assets/images/common/substract.png') no-repeat;
+    margin-right: 5px;
+}
+.ui-tree .ui-treenode-selectable.ui-treenode-content {
+    height: 30px;
+}
+.intel-match-area .ui-tree .ui-tree-container {
+    padding-left: 1em !important;
+    padding-top: 1em!important;
+}
+[hidden] {
+    display: none !important;
+}
+
+.fade.in {
+    opacity: 1;
+}
+.modal-backdrop.in{
+    opacity: 0.5;
+}

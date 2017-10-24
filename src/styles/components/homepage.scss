@@ -1,0 +1,176 @@
+/*首页样式*/
+
+.page_content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .content_mo {
+        width: 100%;
+        height: 600px;
+        margin: 70px auto;
+        .search_cm {
+            width: 50%;
+            min-width: 550px;
+            height: 48px;
+            line-height: 48px;
+            margin: 0 auto;
+            position: relative;
+        }
+    }
+}
+
+.content_mo {
+    .search_cm {
+        &>input {
+            font-size: $font-size-16;
+            width: 100%;
+            height: 48px;
+            line-height: 48px;
+            padding-left: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            outline: none;
+        }
+        &>em {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: url(../../../../assets/home/sosuo.png) no-repeat;
+            cursor: pointer;
+        }
+    }
+    .state_task {
+        width: 1000px;
+        margin: 45px auto;
+        &:after {
+            content: '';
+            display: block;
+            clear: both;
+            width: 1000px;
+            margin: 45px auto;
+        }
+    }
+}
+
+.state_task .task_left,
+.state_task .task_right {
+    width: 50%;
+    float: left;
+    padding: 3%;
+    box:{
+        shadow: 0 0 10px #ccc;
+        sizing: border-box;
+    }
+    border-radius: 3px;
+}
+
+.state_task {
+    .task_left {
+        ul {
+            li {
+                float: left;
+                width: 27%;
+                margin: 3%;
+                box-sizing: border-box;
+                text-align: center;
+                &>img {
+                    display: inline-block;
+                    width: 60%;
+                    height: auto;
+                    cursor: pointer;
+                }
+                &>.bottom_m {
+                    margin-top: 10px;
+                    h3 {
+                        font-size: $font-size-18;
+                        color: #444444;
+                        text-align: center;
+                    }
+                    p {
+                        font-size: $font-size-13;
+                        color: #999;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    .task_right {
+        float: right;
+        padding: 0;
+        box-shadow: none;
+        &>ul {
+            float: right;
+            width: 100%;
+            &:after {
+                content: '';
+                clear: both;
+                display: block;
+            }
+        }
+        ul {
+            li {
+                float: left;
+                width: 45%;
+                box-shadow: 0 0 10px #ccc;
+                box-sizing: border-box;
+                border-radius: 3px;
+                padding-bottom: 8%;
+                margin:{
+                    left: 4%;
+                    bottom: 3%;
+                }
+                &>.top {
+                    cursor: pointer;
+                    float: left;
+                    width: 100%;
+                    margin-top: 10%;
+                    padding:{
+                        left: 10%;
+                        bottom: 9%;
+                    }
+                    box-sizing: border-box;
+                    &>.right {
+                        float: left;
+                        width: 30%;
+                        position: relative;
+                        &>img {
+                            float: left;
+                            width: 100%;
+                            height: auto;
+                            background-size: 100% 100%;
+                            position: absolute;
+                        }
+                    }
+                    &>.left {
+                        float: right;
+                        width: 62%;
+                        h3 {
+                            line-height: 35px;
+                            font-size: $font-size-16;
+                            color: #666666;
+                            margin-top: 8px;
+                        }
+                        p {
+                            color: #999;
+                            font-size: $font-size-13;
+                        }
+                    }
+                }
+                &>.bottom {
+                    display: block;
+                    float: left;
+                    width: 100%;
+                    color: #0d85e4;
+                    font-size: $font-size-24;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

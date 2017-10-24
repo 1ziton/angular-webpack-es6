@@ -1,0 +1,90 @@
+/*** Parameters ***/
+
+$color-top-background: #3B4257;
+$white-background: #fff;
+
+/*一级菜单*/
+
+$top-menu-background: #3B4257;
+
+/*二级菜单*/
+
+$color-second-menu: #313647;
+$second-menu-hover: #2C3141;
+
+/*弹窗头部背景色*/
+$pop-modal-header: #4A76CE;
+
+//按钮
+$button-background: #0d85e4; //蓝色按钮
+$tab-button-background:#4A76CE; //tab栏
+$tab-click: #147cce;
+$color-filter: #3091f2; //筛选按钮
+$color-button-hover: #3B4257; //蓝色按钮hover
+// Colors
+$color-blue: #3B4257;
+$search-button-color: #4A76CE;//搜索按钮颜色
+
+/*浅蓝*/
+
+$color-light-blue: #5dabe8;
+$color-white: #fff;
+$color-secondary: #888;
+$color-light: #e0e0e0;
+$color-lightest: #efefef;
+$color-brand: #239bf6;
+$color-gray: #999999;
+$color-red: red;
+$margin-left-5: 5px;
+$margin-left-10: 10px;
+$margin-right-5: 5px;
+$margin-right-10: 10px;
+$margin-mr-5: 0 5px;
+$margin-mr-10: 0 10px;
+$padding-left-5: 5px;
+$padding-left-10: 10px;
+$padding-right-5: 5px;
+$padding-right-10: 10px;
+$padding-mr-5: 0 5px;
+$padding-mr-10: 0 10px;
+$color-lightgray-background: #fbfafa;
+//字体
+$color-font-default: #333;
+$color-font-white: #fff;
+$font-size-12: 12px;
+$font-size-13: 13px;
+$font-size-14: 14px;
+$font-size-16: 16px;
+$font-size-18: 18px;
+$font-size-24: 24px;
+$font-YaHei: Microsoft YaHei;
+$font-black: "黑体";
+$font-song: "宋体";
+$font-helvetica: helvetica;
+$font-Arial: Arial;
+$font-sans-serif: sans-serif;
+// Animation
+$anime-in: .4s;
+$anime-out: .5s;
+//边框
+$border-light: 1px solid #EBEEEE;
+$border-slim: 1px solid #4A76CE;
+// 阴影
+$box-shadow-light: -3px 0 10px #e4e4e4;
+$box-shadow-grey: 0 5px 10px #6f6f6f;
+// header input框字体placeholder颜色
+$header-input-ph:#bbddf7;
+//表格只读样式
+$input-color:#F5F5F5;
+
+//input框的placeholder字体样式
+$input-ph-font:12px '微软雅黑';
+
+
+$mq-mix-width: 479px;
+$mq-tablet-min-width : 480px;
+$mq-tablet-max-width : 767px;
+$mq-small-width: 992px;
+$mq-middle-width: 1200px;
+$mq-normal-min-width: 1300px;
+

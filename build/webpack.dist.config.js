@@ -14,8 +14,8 @@ webpackConfig.output = {
 
 webpackConfig.module.loaders = webpackConfig.module.loaders.concat([
     {
-        test: /\.less$/,
-        loader: ExtractTextPlugin.extract("style-loader","css?-url&sourceMap!less?sourceMap")
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract("style-loader","css?-url&sourceMap!sass?sourceMap")
     }
 ]);
 
@@ -24,7 +24,8 @@ webpackConfig.plugins = webpackConfig.plugins.concat([
     new CopyWebpackPlugin([
         {from: 'src/scripts', to: 'scripts'},
         {from: 'src/images', to: 'images'},
-        {from: 'src/fonts', to: 'fonts'}
+        {from: 'src/fonts', to: 'fonts'},
+        {from: 'src/config', to: 'config'}
     ]),
 
     new webpack.DefinePlugin({ 'env':'"online"' }),

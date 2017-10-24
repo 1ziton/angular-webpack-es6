@@ -1,0 +1,69 @@
+/**
+* 作用：需要用到css3新特性时使用，避免重复写浏览器前缀
+* 用法例：@include css3(transition, 0.5s)
+*/
+@mixin css3($property, $value) {
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+    #{$prefix}#{$property}: $value;
+  }
+}
+
+
+/**
+* 用于清除浮动
+*/
+@mixin clearfix() {
+  zoom: 1;
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+  }
+}
+
+
+/**
+* 用于绝对定位
+*/
+@mixin abs-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: absolute;
+}
+
+
+/**
+* 水平垂直居中
+* @param $width 容器宽度
+* @param $height 容器高度
+* 参数可传0~2个
+*/
+@mixin center($width: null, $height: null) {
+  position: absolute;
+  top: 10%;
+  left: 45%;
+
+  @if not $width and not $height {
+    transform: translate(-50%, -50%);
+  } @else if $width and $height {
+    width: $width;
+    height: $height;
+    margin: -($width / 2) #{0 0} -($height / 2);
+  } @else if not $height {
+    width: $width;
+    margin-left: -($width / 2);
+    //transform: translateY(-50%);
+  } @else {
+    height: $height;
+    margin-top: -($height / 2);
+    //transform: translateX(-50%);
+  }
+}

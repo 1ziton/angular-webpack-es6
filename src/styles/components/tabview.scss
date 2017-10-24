@@ -1,0 +1,41 @@
+.tab-view {
+    .ui-widget-header {
+        border: none;
+    }
+    .ui-tabview {
+        padding: 0px;
+        .ui-tabview-nav{
+            border-bottom: 1px solid #E1E3E7;
+            background-color: #EFF2F8;
+            li {
+                margin: 0px;
+            }
+            li.ui-state-default {
+                background-color: #EFF2F8;
+            }
+            li.ui-state-active {
+                background-color: #fff;
+            }
+            > li.ui-state-active {
+                border: 1px solid #E1E3E7 !important;
+                border-bottom: none !important;
+            }
+
+            > li.ui-state-default {
+                border: none;
+            }
+        }
+        .ui-tabview-panel {
+            padding: 0;
+        }
+    }
+    .ui-tabview.ui-tabview-top > .ui-tabview-nav {
+        padding: 0px;
+    }
+    .ui-corner-all,.ui-corner-top {
+        border-radius: 0px;
+    }
+
+
+    //#EFF2F8
+}

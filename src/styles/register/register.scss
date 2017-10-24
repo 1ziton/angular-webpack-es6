@@ -1,0 +1,74 @@
+// common style
+.pr {
+    position: relative;
+}
+
+.pt {
+    cursor: pointer;
+}
+
+// custom style
+.rg-container {
+    width: 1100px;
+    height: 600px;
+    margin: 150px auto;
+    .header {
+        color: #3399ff;
+        text-align: right;
+        margin-bottom: 5px;
+    }
+    .form {
+        height: 590px;
+        border: 1px solid #3399ff;
+        border-top: 5px solid #3399ff;
+        margin-bottom: 10px;
+        form {
+            p {
+                span.veri-btn {
+                    display: inline-block;
+                    width: 80px;
+                    height: 26px;
+                    line-height: 25px;
+                    text-align: center;
+                    background-color: #F3F8FD;
+                    border: 1px solid #3399ff;
+                    position: absolute;
+                    right: -89px;
+                    bottom: 0px;
+                }
+                &>input {
+                    width: 70%;
+                    height: 16px;
+                    border: none;
+                    outline: none;
+                }
+                b {
+                    color: #3399ff;
+                    margin: 0 5px
+                }
+                line-height: 70px;
+                height: 50px;
+                width: 40%;
+                margin: 10px auto;
+                border-bottom: 1px solid #eee;
+                padding-left: 20px;
+                &.rg-now {
+                    border: none;
+                    input {
+                        width: 60%;
+                        height: 36px;
+                        line-height: 36px;
+                        background-color: #3399ff;
+                        color: #fff;
+                        margin: 25px 0 0 80px;
+                        text-align: center;
+                        border: none;
+                    }
+                }
+                input {
+                    border: none;
+                }
+            }
+        }
+    }
+}

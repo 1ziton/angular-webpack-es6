@@ -1,0 +1,55 @@
+/*** 右侧滑出弹窗 ***/
+/**
+* 在父组件引用时起类名.slide-modal即可
+* 例：<waybill-modal class="slide-modal"></waybill-modal>
+*/
+.slide-modal{
+  width: 1020px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  //z-index: z-index('modal');
+  &-mask{
+    width: 700px;
+    height: 100%;
+    position: absolute;
+    left: -700px;
+  }
+  &-container{
+    width: 100%;
+    height: 100%;
+    background: $color-lightgray-background;
+    overflow: hidden;
+    box-shadow: $box-shadow-light;
+    .slide-modal-header{
+      padding: 15px 22px;
+      box-shadow: $box-shadow-light;
+      background: $color-white;
+    }
+    .slide-modal-navbar{
+      margin: 0 0 0 22px;
+      height: 70px;
+    }
+    .slide-modal-body{
+      padding: 22px;
+      height: 67%;
+      overflow: auto;
+    }
+      .coopetation-header{
+              height: 60px;
+              padding-left: 22px;
+              background-color: #ffffff;
+              box-shadow: $box-shadow-light;
+              box-sizing: border-box;
+              position: relative;
+              z-index: 2;
+          .edit-title{
+              font-size: $font-size-14;
+              line-height: 60px;
+              height: 60px;
+              font-weight: normal;
+          }
+      }
+  }
+}

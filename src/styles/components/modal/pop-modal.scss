@@ -1,0 +1,47 @@
+/*** 普通对话窗口 ***/
+
+.pop-modal-container {
+    box-shadow: $box-shadow-grey;
+    z-index: z-index("popup");
+
+    /**
+    * 弹窗头部
+    */
+    .pop-modal-header {
+        height: 40px;
+        background: $pop-modal-header;
+        padding: 4px 15px;
+        //text-align: center;
+        .pop-modal-title {
+            color: $color-white;
+            line-height: 40px;
+            font-size: 15px;
+        }
+        .close-icon {
+            float: right;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0.7;
+            line-height: 40px;
+            color: $color-white;
+        }
+    }
+
+    /**
+    * 弹窗主体
+    */
+    .pop-modal-body {
+        padding: 15px;
+        border-bottom: $border-light;
+        background: $color-white;
+    }
+
+    /**
+    * 弹窗底部
+    */
+    .pop-modal-footer {
+        padding: 15px 0;
+        text-align: center;
+        background: $color-white;
+    }
+}

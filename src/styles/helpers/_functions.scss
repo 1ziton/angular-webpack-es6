@@ -1,0 +1,34 @@
+/*** Functions ***/
+/**
+* Set font color according the background
+* source: http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass
+* @param {String} $background - background color - format accepted: hsla, rgb, #
+* @return {String} #color
+*/
+@function set-text-color($background) {
+    @if (lightness($background) > 50) {
+        @return #000; // Lighter backgorund, return dark color
+    } @else {
+        @return #fff; // Darker background, return light color
+    }
+}
+
+
+/**
+* 设置z-index值
+* @param $layer
+* @return {number}
+* 用法例：z-index("modal")
+*/
+$z-layers: (
+        "menu": 10,
+        "dropdown": 100,
+        "modal": 2000,
+        "mask": 2001,
+        "popup": 3000,
+        "popover": 3001,
+        "info":9999,
+);
+@function z-index($layer) {
+    @return map-get($z-layers, $layer);
+}

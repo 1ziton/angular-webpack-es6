@@ -1,0 +1,64 @@
+/*** 输入框样式 ***/
+.input-style{
+  height: 30px;
+  border: $border-slim;
+  padding: 0 0.5em;
+  box-sizing: border-box;
+}
+
+/**
+* 小型输入框
+*/
+.input-box-sm{
+  width: 125px;
+  @extend .input-style;
+}
+
+
+/**
+* 中型输入框
+*/
+.input-box-md{
+  width: 150px;
+  @extend .input-style;
+}
+
+
+/**
+* 大型输入框
+*/
+.input-box-lg{
+  width: 175px;
+  @extend .input-style;
+}
+
+
+/**
+* 小型下拉框
+*/
+.dropdown-box-sm{
+  width: 125px;
+  @extend .input-style;
+}
+
+
+/**
+* 中型下拉框
+*/
+.dropdown-box-md{
+  width: 150px;
+  @extend .input-style;
+}
+
+
+/**
+* 大型下拉框
+*/
+.dropdown-box-lg{
+  width: 175px;
+  @extend .input-style;
+}
+//只读背景色
+.only-ready{
+    background: $input-color;
+}

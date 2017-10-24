@@ -16,7 +16,13 @@ export default {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'eslint-loader'
-            }, {
+            },
+            // {
+            //     test: /\.js$/,
+            //     exclude: [/node_modules/, path.resolve(__dirname, './doc/pages/test')],
+            //     loader: 'ng-annotate!babel'
+            // },
+             {
                 test: /\.js$/,
                 exclude: [/node_modules/, path.resolve(__dirname, './src/pages/test')],
                 loader: 'babel',
@@ -29,7 +35,7 @@ export default {
                         "transform-es2015-classes",
                         "transform-proto-to-assign"
                     ]
-                },
+                }
                 // loaders: ['ng-annotate', 'babel?presets[]=es2015,presets[]=stage-0,plugins[]=transform-es3-property-literals,plugins[]=transform-es3-member-expression-literals']
                 // loader: combineLoaders([
                 //     {
@@ -45,13 +51,17 @@ export default {
                 //         },
                 //     }
                 // ])
-            }, {
+            }, 
+            {
                 test: /\.html$/,
                 exclude: /index.html/,
                 loader: 'ngtemplate?relativeTo=' + srcPath + '/!html?attrs=false'
             }, {
                 test: /\.(png|jpg|gif)$/,
                 loader: "url-loader?name=images/[name]_[hash:8].[ext]&limit=" + BASE64_LIMIT
+            }, {
+                include: /\.json$/,
+                loaders: ['json-loader']
             }]
     },
     resolveLoader: {

@@ -1,0 +1,131 @@
+<div ng-switch="view" ui-date-picker="{{model}}">
+    <div ng-switch-when="date">
+        <table>
+            <thead>
+                <tr>
+                    <th><span class="arrow" ng-click="prev()">&lsaquo;</span></th>
+                    <th colspan="5"> <span class="year-selector" ui-dropdown> <span ng-click="focusYear($event, date)" ui-dropdown-toggle>{{date|mFormat:'YYYY':tz}}</span>
+                        <ul ui-dropdown-menu class="clearfix">
+                            <li ng-class="{active: year.year() == date.year()}" ng-repeat="year in years" ng-click="selectYear(year)" ng-bind="year.year()"></li>
+                        </ul>
+                        </span> <span class="month-selector" ui-dropdown> <span ui-dropdown-toggle>{{date|mFormat:'MMM':tz}}</span>
+                        <ul ui-dropdown-menu class="clearfix">
+                            <li ng-class="{active: month.month() == date.month()}" ng-repeat="month in months" ng-click="selectMonth(month)" ng-bind="month|mFormat:'MMM':tz"></li>
+                        </ul>
+                        </span>
+                    </th>
+                    <th><span class="arrow" ng-click="next()">&rsaquo;</span></th>
+                </tr>
+                <tr>
+                    <th ng-repeat="day in weekdays" style="overflow:hidden" ng-class="{weekend: (day.day() == 0 || day.day() == 6)}" ng-bind="day|mFormat:'dd':tz"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="week in weeks" ng-init="$index2 = $index">
+                    <td ng-repeat="day in week"> <span ng-class="classes[$index2][$index]" ng-click="selectDate($event, day)" ng-bind="day|mFormat:'DD':tz"></span> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div ng-switch-when="datetime">
+        <table>
+            <thead>
+                <tr>
+                    <th><span class="arrow" ng-click="prev()">&lsaquo;</span></th>
+                    <th colspan="5"> <span class="year-selector" ui-dropdown> <span ng-click="focusYear($event, date)" ui-dropdown-toggle>{{date|mFormat:'YYYY':tz}}</span>
+                        <ul ui-dropdown-menu class="clearfix">
+                            <li ng-class="{active: year.year() == date.year()}" ng-repeat="year in years" ng-click="selectYear(year)" ng-bind="year.year()"></li>
+                        </ul>
+                        </span> <span class="month-selector" ui-dropdown> <span ui-dropdown-toggle>{{date|mFormat:'MMM':tz}}</span>
+                        <ul ui-dropdown-menu class="clearfix">
+                            <li ng-class="{active: month.month() == date.month()}" ng-repeat="month in months" ng-click="selectMonth(month)" ng-bind="month|mFormat:'MMM':tz"></li>
+                        </ul>
+                        </span>
+                    </th>
+                    <th><span class="arrow" ng-click="next()">&rsaquo;</span></th>
+                </tr>
+                <tr>
+                    <th ng-repeat="day in weekdays" style="overflow:hidden" ng-class="{weekend: (day.day() == 0 || day.day() == 6)}" ng-bind="day|mFormat:'dd':tz"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="week in weeks" ng-init="$index2 = $index">
+                    <td ng-repeat="day in week"> <span ng-class="classes[$index2][$index]" ng-click="selectDate($event, day)" ng-bind="day|mFormat:'DD':tz"></span> </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="time-wrapper clearfix"> <span class="time-selector" ui-dropdown auto-close="outsideClick"> <input ui-dropdown-toggle ng-model="time.hour" ng-change="selectHour(time.hour)" /> <div ui-dropdown-menu class="clearfix"> <span ng-repeat="hour in hours" ng-click="selectHour(hour)" ng-bind="hour|mFormat:'HH':tz"></span> </div>
+        </span> <span>:</span> <span class=time-selector ui-dropdown> <input ui-dropdown-toggle ng-model="time.minute" ng-change="selectMinute(time.minute)" /> <div ui-dropdown-menu class="clearfix"><span ng-repeat="minute in minutes" ng-click="selectMinute(minute)" ng-bind="minute|mFormat:'mm':tz"></span></div>
+    </span> <span>:</span> <span class="time-selector" ui-dropdown> <input ui-dropdown-toggle ng-model="time.second" ng-change="selectSecond(time.second)" /> <div ui-dropdown-menu class="clearfix"><span ng-repeat="second in seconds" ng-click="selectSecond(second)" ng-bind="second|mFormat:'ss':tz"></span></div>
+</span>
+</div>
+</div>
+<div ng-switch-when="year">
+    <table>
+        <thead>
+            <tr>
+                <th><span ng-click="prev(10)" class="arrow">&lsaquo;</span></th>
+                <th colspan="5" class="switch" ng-bind="years[0].year()+' - '+years[years.length-1].year()"></th>
+                <th><span ng-click="next(10)" class="arrow">&rsaquo;</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="7"> <span ng-class="classes[$index]" ng-repeat="year in years" ng-click="selectYear(year)" ng-bind="year.year()"></span> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div ng-switch-when="month">
+    <table>
+        <tbody>
+            <tr>
+                <td colspan="7"> <span ng-repeat="month in months" ng-class=classes[$index] ng-click="selectMonth(month)" ng-bind="month|mFormat:'MMM':tz"></span> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div ng-switch-when="hours">
+    <table>
+        <thead>
+            <tr>
+                <th ng-click="prev(24)">&lsaquo;</th>
+                <th colspan="5" class="switch" ng-click="setView('date')" ng-bind="date|mFormat:'DD MMMM YYYY':tz"></th>
+                <th ng-click="next(24)">&rsaquo; </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="7"> <span ng-repeat="hour in hours" ng-class="classes[$index]" ng-click=selectDate(hour) ng-bind="hour|mFormat:'HH:mm':tz"></span> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div ng-switch-when="minutes">
+    <table>
+        <thead>
+            <tr>
+                <th ng-click="prev()">&lsaquo;</th>
+                <th colspan="5" class="switch" ng-click="setView('hours')" ng-bind="date|mFormat:'DD MMMM YYYY':tz"></th>
+                <th ng-click="next()">&rsaquo; </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="7"> <span ng-repeat="minute in minutes" ng-class="lasses[$index]" ng-click="selectDate(minute)" ng-bind="minute|mFormat:'HH:mm':tz"></span> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div ng-switch-when="time">
+    <div class="time-wrapper clearfix"> <span class="time-selector" ui-dropdown> <input ui-dropdown-toggle ng-model="time.hour" ng-change="selectHour(time.hour)" /> <div ui-dropdown-menu class="clearfix"> <span ng-repeat="hour in hours" ng-click="selectHour(hour)" ng-bind="hour|mFormat:'HH':tz"></span></div>
+    </span> <span>:</span> <span class="time-selector" ui-dropdown> <input ui-dropdown-toggle ng-model="time.minute" ng-change="selectMinute(time.minute)" /> <div ui-dropdown-menu class="clearfix"><span ng-repeat="minute in minutes" ng-click="selectMinute(minute)" ng-bind="minute|mFormat:'mm':tz"></span></div>
+</span> <span>:</span> <span class="time-selector" ui-dropdown> <input ui-dropdown-toggle ng-model="time.second" ng-change="selectSecond(time.second)" /> <div ui-dropdown-menu class="clearfix"><span ng-repeat="second in seconds" ng-click="selectSecond(second)" ng-bind="second|mFormat:'ss':tz"></span></div>
+</span>
+</div>
+</div>
+</div>
+<div class="buttons" ng-if="popup">
+    <button type="button" ng-if="view == 'datetime' || view == 'date'" class="btn btn-default btn-sm" ng-click="today()">今日</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="closePopup()">关闭</button>
+</div>
